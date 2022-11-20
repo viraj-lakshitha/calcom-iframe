@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Cal from "@calcom/embed-react";
+import React from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-center">
+      <Cal
+        calLink="vitiya99/30min" // this link should get from query params (friend's username/event-type name)
+        config={{
+          name: "Viraj Lakshitha Bandara", // new comer's name
+          email: "virajlakshithabandara@gmail.com", // new comer's email
+          notes: "Sample Meeting", // This should be dynamic (Platform Name - Meeting with ${friend`s_name})
+        }}
+      />
     </div>
   );
-}
+};
 
 export default App;
